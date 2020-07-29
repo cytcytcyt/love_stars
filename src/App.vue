@@ -1,18 +1,14 @@
 <template>
   <div>
-    <login-page></login-page>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import LoginPage from "@/components/LoginPage";
   import zyltx from '@/assets/zyltx.jpg'
   import bytx from '@/assets/bytx.jpg'
 export default {
     name: 'App',
-    components: {
-        LoginPage
-    },
     data() {
         return {
             zyltx, bytx,

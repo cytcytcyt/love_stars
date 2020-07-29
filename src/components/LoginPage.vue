@@ -9,25 +9,25 @@
                         <el-button icon="el-icon-s-custom" @click="showForm='Login'">登录</el-button>
                         <el-button @click="showForm='Resign'">注册<i class="el-icon-edit"></i></el-button>
                     </el-button-group>
-                    <el-form :model="loginForm" label-position="left" :rules="rulesForLogin" v-if="showForm === 'Login'">
-                        <el-form-item label="用户名" prop="loginUsername">
+                    <el-form :model="loginForm" label-position="left" :rules="rulesForLogin" v-show="showForm === 'Login'">
+                        <el-form-item label="用户名" prop="username">
                             <el-input v-model="loginForm.username" placeholder="请输入用户名"></el-input>
                         </el-form-item>
-                        <el-form-item label="密码" prop="loginPassword">
+                        <el-form-item label="密码" prop="password">
                             <el-input v-model="loginForm.password" placeholder="请输入密码"></el-input>
                         </el-form-item>
                         <el-button @click="login">登录</el-button>
                         <el-button @click="resetLogin">重置</el-button>
                     </el-form>
-                    <el-form :model="resignForm" :rules="rulesForResign" ref="resignForm" v-if="showForm === 'Resign'">
-                        <el-form-item label="用户名" prop="resignUsername">
-                            <el-input :v-model="resignForm.emailAddress" placeholder="请输入邮箱"></el-input>
+                    <el-form :model="resignForm" :rules="rulesForResign" ref="resignForm" v-show="showForm === 'Resign'">
+                        <el-form-item label="用户名" prop="emailAddress">
+                            <el-input v-model="resignForm.emailAddress" placeholder="请输入邮箱"></el-input>
                         </el-form-item>
-                        <el-form-item label="密码" prop="resignPassword">
-                            <el-input :v-model="resignForm.password" placeholder="请输入密码"></el-input>
+                        <el-form-item label="密码" prop="password">
+                            <el-input v-model="resignForm.password" placeholder="请输入密码"></el-input>
                         </el-form-item>
                         <el-form-item label="确认密码" prop="checkPass">
-                            <el-input :v-model="resignForm.checkPass" placeholder="请确认密码"></el-input>
+                            <el-input v-model="resignForm.checkPass" placeholder="请确认密码"></el-input>
                         </el-form-item>
                         <el-button @click="resign('resignForm')">注册</el-button>
                         <el-button @click="resetResign('resignForm')">重置</el-button>
@@ -45,17 +45,17 @@
     export default {
         name: "LoginPage",
         data(){
-            // var validator = (rule, value, callback) => {
-            //     if (value === '') {
-            //         callback(new Error('请确认密码'));
-            //     }else if (value !== this.resignForm.password) {
-            //         console.log('value',value)
-            //         console.log('this.resignForm.password',this.resignForm.password)
-            //         callback(new Error('两次输入密码不一致!'));
-            //     } else {
-            //         callback();
-            //     }
-            // };
+            var validator = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('请确认密码'));
+                }else if (value !== this.resignForm.password) {
+                    console.log('value',value)
+                    console.log('this.resignForm.password',this.resignForm.password)
+                    callback(new Error('两次输入密码不一致!'));
+                } else {
+                    callback();
+                }
+            };
             return{
                 showForm:'Login',
                 loginForm:{
@@ -68,52 +68,49 @@
                     checkPass:''
                 },
                 rulesForLogin:{
-                    loginUsername: [
+                    username: [
                         { required: true, message: '请输入用户名', trigger: 'blur' },
                     ],
-                    loginPassword: [
+                    password: [
                         { required: true, message: '请输入密码', trigger: 'blur' }
                     ],
                 },
                 rulesForResign:{
-                    resignUsername: [
-                        { required: true, message: '请输入用户名', trigger: 'blur' },
+                    emailAddress: [
+                        { required: true, message: '请输入邮箱地址', trigger: 'blur' },
                         { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
                     ],
-                    resignPassword: [
+                    password: [
                         { required: true, message: '请输入密码', trigger: 'blur' }
                     ],
                     checkPass: [
-                        { required: true, message: '请确认密码', trigger: 'blur' }
+                        { validator, trigger: 'blur' }
                     ]
-                    // checkPass: [
-                    //     { validator, trigger: 'blur' }
-                    // ],
                 }
             }
         },
         methods: {
             login(){
-                // axios.post('http://localhost:8088/api/login',{
-                //     username:this.loginForm.username,
-                //     password:this.loginForm.password
-                // })
-                //     .then(response => {
-                //         console.log('login:',response)
-                //         if()
-                //             alert('用户名不存在')
-                //         else if()
-                //             alert('密码错误')
-                //         else
-                //             alert('欢迎')
-                //     }).catch(function (error) { // 请求失败处理
-                //     console.log(error);
-                // })
+                axios.post('http://localhost:8088/api/login',{
+                    username:this.loginForm.username,
+                    password:this.loginForm.password
+                })
+                    .then(response => {
+                        console.log('login:',response)
+                        // if()
+                        //     alert('用户名不存在')
+                        // else if(response.data==='PASSWORD ERR')
+                        //     alert('密码错误')
+                        // else
+                        //     alert('欢迎')
+                    }).catch(function (error) { // 请求失败处理
+                    console.log(error);
+                })
             },
             resign(form) {
-                const that=this
                 this.$refs[form].validate((valid) => {
                     if (valid) {
+
                         axios.post('http://localhost:8088/api/resignNewUser',{
                         username:this.resignForm.emailAddress,
                         password:this.resignForm.password
@@ -133,12 +130,13 @@
                         }).catch(function (error) { // 请求失败处理
                             console.log(error);
                         })
+
                     } else {
                         console.log('error submit!!');
                         return false;
                     }
                 });
-                that.$router.push('/ResignInfo')
+                this.$router.push('/ResignInfo')
             },
             resetLogin(){
                 this.loginForm={

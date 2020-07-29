@@ -1,6 +1,7 @@
 <template>
     <div>
         {{$store.state.userInfo.userId}}
+        aaaaa
     </div>
 </template>
 

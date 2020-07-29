@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import App from "@/App";
 import ResignInfo from "@/components/ResignInfo"
+import LoginPage from "@/components/LoginPage";
 import PowerStation from "@/components/PowerStation";
 import ProductsMarket from "@/components/ProductsMarket";
 import StarTelescope from "@/components/StarTelescope";
@@ -20,6 +21,11 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
     routes:[
+        {
+            name: 'LoginPage',
+            path: '/',
+            component: LoginPage
+        },
         {
             name: 'ResignInfo',
             path: '/ResignInfo',
