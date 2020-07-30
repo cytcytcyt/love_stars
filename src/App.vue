@@ -1,13 +1,31 @@
 <template>
   <div>
-    <router-view></router-view>
+    <NavPage></NavPage>
   </div>
 </template>
 
 <script>
-
+  import zyltx from '@/assets/zyltx.jpg'
+  import bytx from '@/assets/bytx.jpg'
+  import NavPage from '@/components/NavPage'
 export default {
-    name: 'App'
+    name: 'App',
+    components: {
+      NavPage
+    },
+    data() {
+        return {
+            zyltx, bytx,
+            isShow:true
+        }
+    },
+    methods: {
+        selectBoy(val){
+            localStorage.setItem('nameId',val)
+            console.log('choose')
+            this.isShow=false
+        }
+    }
 }
 </script>
 
