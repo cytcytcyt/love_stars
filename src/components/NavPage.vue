@@ -14,7 +14,10 @@
             </el-menu-item>
             <div style="float: right;display: inline-flex;">
                 <div @click="changeBoy(1)"><el-avatar class="avatar" :src="zyltx"></el-avatar></div>
-                <div @click="changeBoy(2)"><el-avatar class="avatar" :src="bytx"></el-avatar></div>
+                <div @click="changeBoy(2)"><el-avatar class="avatar" :src="bytx"></el-avatar></div>                <div>          
+                <el-menu-item :index='loginPage'>
+                   点击登录
+            </el-menu-item></div>
             </div>
         </el-menu>
         <el-row>
@@ -43,6 +46,7 @@
             return{
                 nameId:0,
                 firstIn:true,
+                loginPage: '/loginPage',
                 navList:[
                     {path:'/starTelescope', img:'el-icon-view',navItem:'星星望远镜'},
                     {path:'/powerStation', img:'el-icon-edit',navItem:'爱心发电站'},

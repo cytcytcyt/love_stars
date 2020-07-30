@@ -1,7 +1,6 @@
 <template>
     <div>
         <el-container>
-            <el-header>Header</el-header>
             <el-container>
                 <el-main>姐妹快来就差你了</el-main>
                 <el-aside width="500px">
@@ -34,7 +33,6 @@
                     </el-form>
                 </el-aside>
             </el-container>
-            <el-footer>Footer</el-footer>
         </el-container>
     </div>
 </template>
