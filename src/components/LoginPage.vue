@@ -91,26 +91,29 @@
         },
         methods: {
             login(){
+                const that=this
                 axios.post('http://localhost:8088/api/login',{
                     username:this.loginForm.username,
                     password:this.loginForm.password
                 })
                     .then(response => {
-                        console.log('login:',response)
-                        // if()
-                        //     alert('用户名不存在')
-                        // else if(response.data==='PASSWORD ERR')
-                        //     alert('密码错误')
-                        // else
-                        //     alert('欢迎')
+                        if(response.data==='NO USERNAME')
+                            alert('用户名不存在')
+                        else if(response.data==='PASSWORD ERR')
+                            alert('密码错误')
+                        else{
+                            alert('欢迎')
+                            that.$store.commit('setUserInfo',response.data)
+                            that.$router.push('/NavPage')
+                        }
                     }).catch(function (error) { // 请求失败处理
                     console.log(error);
                 })
             },
             resign(form) {
+                const that=this
                 this.$refs[form].validate((valid) => {
                     if (valid) {
-
                         axios.post('http://localhost:8088/api/resignNewUser',{
                         username:this.resignForm.emailAddress,
                         password:this.resignForm.password
@@ -118,19 +121,21 @@
                         .then(response => {
                             console.log('resign:',response)
                             if(response.status===200){
-                                if(response.data.msg === 'USERNAME EXIST')
+                                if(response.data.msg === 'USERNAME EXIST'){
                                     alert('用户名已存在')
+                                    return false;
+                                }
                                 else{
                                     // 调用mutations中的setUserInfo方法
-                                    this.$store.commit('setUserInfo',response.data)
+                                    that.$store.commit('setUserInfo',response.data)
                                     alert('注册成功')
                                 }
                             }else
                                 alert('网络错误，请稍后重试。')
+                                return false;
                         }).catch(function (error) { // 请求失败处理
                             console.log(error);
                         })
-
                     } else {
                         console.log('error submit!!');
                         return false;
