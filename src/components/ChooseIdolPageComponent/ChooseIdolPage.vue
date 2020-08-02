@@ -19,5 +19,5 @@ export default chooseIdolPage;
 </script>
 
 <style scoped>
-@import "./ChooseIdolPage.css";
+@import "./ChooseIdolPage.scss";
 </style>

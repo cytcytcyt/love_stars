@@ -71,7 +71,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .article-title {
   margin: auto;
   width: auto;

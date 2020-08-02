@@ -259,7 +259,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .top-bar {
   padding: 30px;
 }

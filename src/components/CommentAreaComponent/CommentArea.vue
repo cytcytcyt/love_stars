@@ -22,5 +22,5 @@ export default commentArea;
 </script>
 
 <style scoped>
-@import "./CommentArea.css";
+@import "./CommentArea.scss";
 </style>

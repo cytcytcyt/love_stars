@@ -167,7 +167,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .el-header,
 .el-footer {
   background-color: rgba(255, 225, 134, 0.51);

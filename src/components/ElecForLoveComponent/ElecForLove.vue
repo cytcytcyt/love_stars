@@ -127,7 +127,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .el-button-group {
   display: flex;
   padding: 30px 10%;

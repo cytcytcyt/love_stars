@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .left,
 .right {
   height: 1300px;

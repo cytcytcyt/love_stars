@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 /deep/ .el-col-20 {
   height: 980px;
 }

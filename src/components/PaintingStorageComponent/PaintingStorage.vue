@@ -206,7 +206,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .EScontainer {
   padding-left: 15px;
   padding-right: 15px;

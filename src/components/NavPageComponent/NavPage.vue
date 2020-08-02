@@ -36,6 +36,6 @@ import navPage from "./NavPage";
 export default navPage;
 </script>
 
-<style lang="css" scoped>
-@import "./NavPage.css";
+<style scoped>
+@import "./NavPage.scss";
 </style>

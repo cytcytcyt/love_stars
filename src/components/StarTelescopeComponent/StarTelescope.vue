@@ -101,6 +101,6 @@ export default starTelescope;
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="css" scoped>
-@import "StarTelescope.css";
+<style scoped>
+@import "StarTelescope.scss";
 </style>
