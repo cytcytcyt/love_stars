@@ -1,0 +1,50 @@
+.star-tele{
+    padding: 35px;
+  }
+  .top-bar{
+    /*padding-left: 1550px;*/
+    padding-bottom: 30px;
+  }
+/deep/ .el-timeline-item__node--large{
+    background-color: #ffffff;
+  }
+/deep/ .el-timeline-item__icon {
+  color: #f17171;
+  font-size: 40px;
+}
+/deep/  .el-timeline {
+    font-size: 20px;
+  }
+  /deep/  .el-timeline-item {
+    padding-bottom: 0.1px;
+  }
+  .tele-items{
+    margin: 10px;
+  }
+  .tele-items-img{
+    margin-right: 10px;
+  }
+  /deep/.el-divider--horizontal{
+    background: 0 0;
+    border-top: 1.5px dotted #e8eaec;
+  }
+  .pagination-container{
+    width: 60%;
+    position: absolute;
+    bottom: 3%;
+    text-align: center;
+  }
+  .avatar{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 5px;
+    border: 3px solid;
+  }
+  
+  .star-right-corner {
+    float: right;display: inline-flex;
+    position: absolute;
+    top: -61px;
+    right: 0px;
+  }
