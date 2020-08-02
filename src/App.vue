@@ -22,7 +22,7 @@ import NavPage from "@/components/NavPageComponent/NavPage.vue";
 export default {
   name: "App",
   components: {
-    NavPage,
+    NavPage
   },
   data() {
     return {
