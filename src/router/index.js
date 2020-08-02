@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import App from "@/App";
-import ResignInfo from "@/components/ResignInfoComponent/ResignInfo";
-import ChooseIdolPage from "@/components/ChooseIdolPageComponent/ChooseIdolPage";
-import LoginPage from "@/components/LoginPageComponent/LoginPage";
-import PowerStation from "@/components/PowerStationComponent/PowerStation";
-import ProductsMarket from "@/components/ProductsMarketComponent/ProductsMarket";
-import StarTelescope from "@/components/StarTelescopeComponent/StarTelescope";
-import ElecForLove from "@/components/ElecForLoveComponent/ElecForLove";
-import EssayStorage from "@/components/EssayStorageComponent/EssayStorage";
-import PaintingStorage from "@/components/PaintingStorageComponent/PaintingStorage";
-import EssayInfo from "@/components/EssayInfoComponent/EssayInfo";
-import CommentArea from "@/components/CommentAreaComponent/CommentArea";
+import ResignInfo from "@/components/ResignInfoComponent/ResignInfo.vue";
+import ChooseIdolPage from "@/components/ChooseIdolPageComponent/ChooseIdolPage.vue";
+import LoginPage from "@/components/LoginPageComponent/LoginPage.vue";
+import PowerStation from "@/components/PowerStationComponent/PowerStation.vue";
+import ProductsMarket from "@/components/ProductsMarketComponent/ProductsMarket.vue";
+import StarTelescope from "@/components/StarTelescopeComponent/StarTelescope.vue";
+import ElecForLove from "@/components/ElecForLoveComponent/ElecForLove.vue";
+import EssayStorage from "@/components/EssayStorageComponent/EssayStorage.vue";
+import PaintingStorage from "@/components/PaintingStorageComponent/PaintingStorage.vue";
+import EssayInfo from "@/components/EssayInfoComponent/EssayInfo.vue";
+import CommentArea from "@/components/CommentAreaComponent/CommentArea.vue";
+import FirstIn from "@/components/FirstInComponent/FirstIn.vue";
 
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
@@ -26,6 +27,11 @@ export default new VueRouter({
             name: 'LoginPage',
             path: '/LoginPage',
             component: LoginPage
+        },
+        {
+            name: 'FirstIn',
+            path: '/FirstIn',
+            component: FirstIn
         },
         {
             name: 'ChooseIdolPage',

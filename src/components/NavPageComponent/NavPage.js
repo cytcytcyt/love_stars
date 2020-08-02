@@ -7,7 +7,6 @@ export default {
   data() {
     return {
       nameId: 0,
-      firstIn: true,
       loginPage: "/loginPage",
       navList: [
         { path: "/starTelescope", img: "el-icon-view", navItem: "星星望远镜" },

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import chooseIdolPage from "./ChooseIdolPage.vue";
+import chooseIdolPage from "./ChooseIdolPage.js";
 export default chooseIdolPage;
 </script>
 

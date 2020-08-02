@@ -1,6 +1,17 @@
 <template>
   <div>
     <NavPage></NavPage>
+        <el-row>
+      <el-col :span="4">
+        <div class="left"></div>
+      </el-col>
+      <el-col :span="16">
+        <router-view></router-view>
+      </el-col>
+      <el-col :span="4">
+        <div class="right"></div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -30,6 +41,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .left,
+  .right {
+    height: 1300px;
+    background-color: beige;
+    opacity: 0.5;
+  }
+
+    .first-in-img {
+    margin-top: 5%;
+    width: 100%;
+  }
+
 #selectWho{
   background-color: beige;
   width: 100%;

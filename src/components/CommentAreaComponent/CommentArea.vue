@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import commentArea from './CommentArea.vue';
+import commentArea from './CommentArea.js';
 export default commentArea;
 </script>
 

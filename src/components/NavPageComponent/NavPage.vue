@@ -28,18 +28,6 @@
         </div>
       </div>
     </el-menu>
-    <el-row>
-      <el-col :span="4">
-        <div class="left"></div>
-      </el-col>
-      <el-col :span="16">
-        <img class="first-in-img" v-show="firstIn" :src=" this.nameId==='1' ? zylbg : bybg" />
-        <router-view></router-view>
-      </el-col>
-      <el-col :span="4">
-        <div class="right"></div>
-      </el-col>
-    </el-row>
   </div>
 </template>
 
