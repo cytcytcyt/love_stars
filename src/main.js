@@ -9,6 +9,7 @@ import store from "@/store/store";
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 
+//监听方法是这个哦
 Vue.prototype.resetSetItem = function (key, newVal) {
   console.log(newVal);
   if (key === 'nameId') {
