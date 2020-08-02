@@ -1,5 +1,5 @@
 export default {
-    getUserInfo(state){
-        return state.userInfo
-    }
-}
+  getUserInfo(state) {
+    return state.userInfo;
+  },
+};

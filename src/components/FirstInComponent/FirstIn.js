@@ -1,24 +1,24 @@
-import zylbg from "@/assets/zylbg.jpg";
-import bybg from "@/assets/bybg.jpg";
-import zyltx from "@/assets/zyltx.jpg";
-import bytx from "@/assets/bytx.jpg";
+import zylbg from '@/assets/zylbg.jpg';
+import bybg from '@/assets/bybg.jpg';
+import zyltx from '@/assets/zyltx.jpg';
+import bytx from '@/assets/bytx.jpg';
 export default {
-  name: "FirstIn",
+  name: 'FirstIn',
   data() {
     return {
       nameId: 0,
       zylbg,
       bybg,
       zyltx,
-      bytx
+      bytx,
     };
-},
-    components: {},
-    mounted() {
-        window.addEventListener('setItem', ()=> {
-            this.nameId = localStorage.getItem("nameId")
-        })
-      this.nameId = localStorage.getItem("nameId");
-      console.log("router", this.$route.path);
-    }
+  },
+  components: {},
+  mounted() {
+    window.addEventListener('setItem', () => {
+      this.nameId = localStorage.getItem('nameId');
+    });
+    this.nameId = localStorage.getItem('nameId');
+    console.log('router', this.$route.path);
+  },
 };

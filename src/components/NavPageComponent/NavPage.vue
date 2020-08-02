@@ -32,10 +32,10 @@
 </template>
 
 <script>
-  import navPage from "./NavPage";
-  export default navPage;
+import navPage from "./NavPage";
+export default navPage;
 </script>
 
 <style lang="css" scoped>
-  @import './NavPage.css';
+@import "./NavPage.css";
 </style>

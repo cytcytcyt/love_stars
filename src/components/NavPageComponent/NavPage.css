@@ -1,26 +1,26 @@
 .top-nav-bar {
-    font-weight: bold;
-    font-family: fantasy;
-  }
-  /deep/ .el-menu-item {
-    font-size: 20px;
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-  /deep/ .el-menu-item i {
-    color: white;
-    width: 50px;
-    font-size: 30px;
-  }
-  .avatar {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-    margin-top: 5px;
-    border: 3px solid;
-  }
+  font-weight: bold;
+  font-family: fantasy;
+}
+/deep/ .el-menu-item {
+  font-size: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+/deep/ .el-menu-item i {
+  color: white;
+  width: 50px;
+  font-size: 30px;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  margin-top: 5px;
+  border: 3px solid;
+}
 
-  .right-corner {
-    float: right;
-    display: inline-flex;
-  }
+.right-corner {
+  float: right;
+  display: inline-flex;
+}

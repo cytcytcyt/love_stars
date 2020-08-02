@@ -1,15 +1,12 @@
 <template>
-    <div>
-        jiesuan
-    </div>
+  <div>jiesuan</div>
 </template>
 
 <script>
-    export default {
-        name: "CountMoney"
-    }
+export default {
+  name: "CountMoney",
+};
 </script>
 
 <style scoped>
-
 </style>

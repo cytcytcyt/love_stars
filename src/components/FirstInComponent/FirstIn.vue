@@ -1,5 +1,5 @@
 <template>
-    <img class="first-in-img" :src="this.nameId==='1' ? zylbg : bybg" />
+  <img class="first-in-img" :src="this.nameId==='1' ? zylbg : bybg" />
 </template>
 
 <script>

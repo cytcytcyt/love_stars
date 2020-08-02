@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavPage></NavPage>
-        <el-row>
+    <el-row>
       <el-col :span="4">
         <div class="left"></div>
       </el-col>
@@ -16,64 +16,65 @@
 </template>
 
 <script>
-  import zyltx from '@/assets/zyltx.jpg'
-  import bytx from '@/assets/bytx.jpg'
-  import NavPage from '@/components/NavPageComponent/NavPage.vue'
+import zyltx from "@/assets/zyltx.jpg";
+import bytx from "@/assets/bytx.jpg";
+import NavPage from "@/components/NavPageComponent/NavPage.vue";
 export default {
-    name: 'App',
-    components: {
-      NavPage
+  name: "App",
+  components: {
+    NavPage,
+  },
+  data() {
+    return {
+      zyltx,
+      bytx,
+      isShow: true,
+    };
+  },
+  methods: {
+    selectBoy(val) {
+      localStorage.setItem("nameId", val);
+      console.log("choose");
+      this.isShow = false;
     },
-    data() {
-        return {
-            zyltx, bytx,
-            isShow:true
-        }
-    },
-    methods: {
-        selectBoy(val){
-            localStorage.setItem('nameId',val)
-            console.log('choose')
-            this.isShow=false
-        }
-    }
-}
+  },
+};
 </script>
 
 <style lang="css" scoped>
-  .left,
-  .right {
-    height: 1300px;
-    background-color: beige;
-    opacity: 0.5;
-  }
+.left,
+.right {
+  height: 1300px;
+  background-color: beige;
+  opacity: 0.5;
+}
 
-    .first-in-img {
-    margin-top: 5%;
-    width: 100%;
-  }
+.first-in-img {
+  margin-top: 5%;
+  width: 100%;
+}
 
-#selectWho{
+#selectWho {
   background-color: beige;
   width: 100%;
   height: 1300px;
   position: absolute;
-  top:0;
+  top: 0;
 }
-.tip{
+.tip {
   text-align: center;
   font-size: 5em;
   margin-bottom: 7%;
   font-family: fantasy;
   color: #0e8893;
 }
-.avatar-containner{
+.avatar-containner {
   width: 800px;
   height: 500px;
   margin-left: 32%;
   display: inline-flex;
 }
-.avatar{
+.avatar {
   width: 200px;
   height: 200px;
   margin-right: 60px;
