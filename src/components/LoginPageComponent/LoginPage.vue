@@ -102,7 +102,7 @@
                         else{
                             alert('欢迎')
                             that.$store.commit('setUserInfo',response.data)
-                            that.$router.push('/NavPage')
+                            that.$router.push('/')
                         }
                     }).catch(function (error) { // 请求失败处理
                     console.log(error);

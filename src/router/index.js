@@ -30,7 +30,7 @@ export default new VueRouter({
         },
         {
             name: 'FirstIn',
-            path: '/FirstIn',
+            path: '/',
             component: FirstIn
         },
         {
