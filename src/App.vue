@@ -7,7 +7,7 @@
 <script>
   import zyltx from '@/assets/zyltx.jpg'
   import bytx from '@/assets/bytx.jpg'
-  import NavPage from '@/components/NavPage'
+  import NavPage from '@/components/NavPageComponent/NavPage'
 export default {
     name: 'App',
     components: {

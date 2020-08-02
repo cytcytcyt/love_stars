@@ -1,17 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import App from "@/App";
-import ResignInfo from "@/components/ResignInfo";
-import ChooseIdolPage from "@/components/ChooseIdolPage";
-import LoginPage from "@/components/LoginPage";
-import PowerStation from "@/components/PowerStation";
-import ProductsMarket from "@/components/ProductsMarket";
-import StarTelescope from "@/components/StarTelescope";
-import ElecForLove from "@/components/ElecForLove";
-import EssayStorage from "@/components/EssayStorage";
-import PaintingStorage from "@/components/PaintingStorage";
-import EssayInfo from "@/components/EssayInfo";
-import CommentArea from "@/components/CommentArea";
+import ResignInfo from "@/components/ResignInfoComponent/ResignInfo";
+import ChooseIdolPage from "@/components/ChooseIdolPageComponent/ChooseIdolPage";
+import LoginPage from "@/components/LoginPageComponent/LoginPage";
+import PowerStation from "@/components/PowerStationComponent/PowerStation";
+import ProductsMarket from "@/components/ProductsMarketComponent/ProductsMarket";
+import StarTelescope from "@/components/StarTelescopeComponent/StarTelescope";
+import ElecForLove from "@/components/ElecForLoveComponent/ElecForLove";
+import EssayStorage from "@/components/EssayStorageComponent/EssayStorage";
+import PaintingStorage from "@/components/PaintingStorageComponent/PaintingStorage";
+import EssayInfo from "@/components/EssayInfoComponent/EssayInfo";
+import CommentArea from "@/components/CommentAreaComponent/CommentArea";
 
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
