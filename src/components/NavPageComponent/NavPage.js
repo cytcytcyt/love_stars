@@ -36,7 +36,8 @@ export default {
       console.log("handleSelect-key:", key, "handleSelect-keyPath:", keyPath);
     },
     changeBoy(val) {
-      localStorage.setItem("nameId", val);
+      // localStorage.setItem("nameId", val);
+      this.resetSetItem('nameId', val);
       console.log("changeboy", localStorage.getItem("nameId"));
     },
   },

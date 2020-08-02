@@ -15,6 +15,9 @@ export default {
 },
     components: {},
     mounted() {
+        window.addEventListener('setItem', ()=> {
+            this.nameId = localStorage.getItem("nameId")
+        })
       this.nameId = localStorage.getItem("nameId");
       console.log("router", this.$route.path);
     }
