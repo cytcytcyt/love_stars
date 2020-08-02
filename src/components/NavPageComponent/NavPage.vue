@@ -14,7 +14,7 @@
         <i :class="item.img"></i>
         {{ item.navItem }}
       </el-menu-item>
-      <div style="float: right;display: inline-flex;">
+      <div class="right-corner">
         <div @click="changeBoy(1)">
           <el-avatar class="avatar" :src="zyltx"></el-avatar>
         </div>
@@ -22,7 +22,7 @@
           <el-avatar class="avatar" :src="bytx"></el-avatar>
         </div>
       </div>
-      <div style="float: right;display: inline-flex;">
+      <div class="right-corner">
         <div>
           <el-menu-item :index="loginPage">点击登录</el-menu-item>
         </div>

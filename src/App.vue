@@ -7,7 +7,7 @@
 <script>
   import zyltx from '@/assets/zyltx.jpg'
   import bytx from '@/assets/bytx.jpg'
-  import NavPage from '@/components/NavPageComponent/NavPage'
+  import NavPage from '@/components/NavPageComponent/NavPage.vue'
 export default {
     name: 'App',
     components: {

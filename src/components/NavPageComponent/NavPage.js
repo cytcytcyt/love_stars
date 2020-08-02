@@ -3,7 +3,7 @@ import bybg from "@/assets/bybg.jpg";
 import zyltx from "@/assets/zyltx.jpg";
 import bytx from "@/assets/bytx.jpg";
 export default {
-  name: "navPage",
+  name: "NavPage",
   data() {
     return {
       nameId: 0,

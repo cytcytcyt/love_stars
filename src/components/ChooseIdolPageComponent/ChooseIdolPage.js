@@ -1,7 +1,7 @@
 import zyltx from '@/assets/zyltx.jpg';
 import bytx from '@/assets/bytx.jpg';
 export default {
-  name: 'chooseIdolPage',
+  name: 'ChooseIdolPage',
   data() {
     return {
       zyltx,

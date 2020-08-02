@@ -29,3 +29,8 @@
     margin-top: 5%;
     width: 100%;
   }
+
+  .right-corner {
+    float: right;
+    display: inline-flex;
+  }

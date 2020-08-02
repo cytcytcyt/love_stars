@@ -1,0 +1,25 @@
+.comment-area-container{
+    padding: 2% 7%;
+}
+.el-image{
+margin-left: 30%;
+width: 50%;
+opacity: 0.8;
+}
+/deep/.el-divider--horizontal{
+    background: 0 0;
+    border-top: 1.5px dotted #e8eaec;
+}
+.dia-buttons{
+    margin: auto;
+    width: fit-content;
+}
+.el-button {
+    margin: 20px 50px 10px;
+}
+.publish-area{
+position: absolute;
+width: 55%;
+bottom: 5%;
+left: 22%;
+}
