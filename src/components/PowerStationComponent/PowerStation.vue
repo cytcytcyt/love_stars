@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/deep/ .el-col-20 {
+::v-deep .el-col-20 {
   height: 980px;
 }
 .left-nav-bar {
@@ -71,7 +71,7 @@ export default {
   font-size: 30px;
   font-weight: bolder;
 }
-/deep/ .el-menu-item {
+::v-deep .el-menu-item {
   font-weight: bold;
 }
 .first-in-img {

@@ -2,12 +2,12 @@
   font-weight: bold;
   font-family: fantasy;
 }
-/deep/ .el-menu-item {
+::v-deep .el-menu-item {
   font-size: 20px;
   padding-right: 40px;
   padding-left: 40px;
 }
-/deep/ .el-menu-item i {
+::v-deep .el-menu-item i {
   color: white;
   width: 50px;
   font-size: 30px;

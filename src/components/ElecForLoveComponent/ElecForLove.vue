@@ -141,17 +141,17 @@ export default {
   width: 90%;
   margin: auto;
 }
-/deep/ .el-textarea__inner {
+::v-deep .el-textarea__inner {
   height: 200px;
 }
 .tags-for-choice {
   padding: 2%;
   margin: auto;
 }
-/deep/.el-input-group__prepend {
+::v-deep.el-input-group__prepend {
   height: 70px;
 }
-/deep/.el-input__inner {
+::v-deep.el-input__inner {
   height: 70px;
 }
 .el-tag {

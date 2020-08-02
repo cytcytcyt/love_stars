@@ -272,7 +272,7 @@ export default {
 .market {
   padding: 20px;
 }
-/deep/ .el-card,
+::v-deep .el-card,
 .el-message {
   border-radius: 7px;
   overflow: hidden;
@@ -308,11 +308,11 @@ export default {
   width: 65%;
   border-radius: 0px 0px 15px 15px;
 }
-/deep/ .el-drawer__header {
+::v-deep .el-drawer__header {
   margin: 0px;
   padding: 10px 20px 0;
 }
-/deep/ .el-drawer {
+::v-deep .el-drawer {
   top: 0;
   height: 70%;
 }
@@ -320,10 +320,10 @@ export default {
   width: 90%;
   margin: auto;
 }
-/deep/ .el-table::before {
+::v-deep .el-table::before {
   height: 0;
 }
-/deep/ .warning-row {
+::v-deep .warning-row {
   background: oldlace;
 }
 .total-money {
