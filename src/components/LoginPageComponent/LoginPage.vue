@@ -21,7 +21,7 @@
               <el-input v-model="loginForm.username" placeholder="请输入用户名"></el-input>
             </el-form-item>
             <el-form-item label="密码" prop="password">
-              <el-input v-model="loginForm.password" placeholder="请输入密码"></el-input>
+              <el-input v-model="loginForm.password" placeholder="请输入密码" type="password"></el-input>
             </el-form-item>
             <el-button @click="login">登录</el-button>
             <el-button @click="resetLogin">重置</el-button>
@@ -36,10 +36,10 @@
               <el-input v-model="resignForm.emailAddress" placeholder="请输入邮箱"></el-input>
             </el-form-item>
             <el-form-item label="密码" prop="password">
-              <el-input v-model="resignForm.password" placeholder="请输入密码"></el-input>
+              <el-input v-model="resignForm.password" placeholder="请输入密码" type="password"></el-input>
             </el-form-item>
             <el-form-item label="确认密码" prop="checkPass">
-              <el-input v-model="resignForm.checkPass" placeholder="请确认密码"></el-input>
+              <el-input v-model="resignForm.checkPass" placeholder="请确认密码" type="password"></el-input>
             </el-form-item>
             <el-button @click="resign('resignForm')">注册</el-button>
             <el-button @click="resetResign('resignForm')">重置</el-button>
