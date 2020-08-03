@@ -6,8 +6,13 @@ import router from './router';
 // 引入store，变为全局仓库
 import store from '@/store/store';
 
+// 引入插件
+import VueSweetalert2 from './plugins/sweetAlert.js'
+
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
+// 使用插件
+Vue.use(VueSweetalert2)
 
 //监听方法是这个哦
 Vue.prototype.resetSetItem = function(key, newVal) {
