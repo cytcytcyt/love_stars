@@ -23,9 +23,13 @@
         </div>
       </div>
       <div class="right-corner">
-        <div>
-          <el-menu-item :index="loginPage">点击登录</el-menu-item>
-        </div>
+          <el-menu-item :index="loginPage" v-show="!isLogin">登录</el-menu-item>
+      </div>
+      <div class="right-corner">
+          <el-menu-item @click="logout()" v-show="isLogin">登出</el-menu-item>
+      </div>      
+      <div class="right-corner">
+          <el-menu-item>{{userName}}</el-menu-item>
       </div>
     </el-menu>
   </div>

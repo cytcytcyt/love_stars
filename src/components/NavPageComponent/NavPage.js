@@ -2,11 +2,13 @@ import zylbg from '@/assets/zylbg.jpg';
 import bybg from '@/assets/bybg.jpg';
 import zyltx from '@/assets/zyltx.jpg';
 import bytx from '@/assets/bytx.jpg';
+import swal from 'sweetalert2';
 export default {
   name: 'NavPage',
   data() {
     return {
       nameId: 0,
+      userName: "",
       loginPage: '/loginPage',
       navList: [
         { path: '/starTelescope', img: 'el-icon-view', navItem: '星星望远镜' },
@@ -21,10 +23,18 @@ export default {
       bybg,
       zyltx,
       bytx,
+      isLogin: false
     };
   },
   components: {},
   mounted() {
+    window.addEventListener('setItem', () => {
+      this.userName = localStorage.getItem('nickName');
+      if(this.userName!=="") {
+        this.isLogin = true;
+        console.log(this.isLogin);
+      }
+    });
     this.nameId = localStorage.getItem('nameId');
     console.log('router', this.$route.path);
     if (this.$route.path === '') this.firstIn = true;
@@ -40,5 +50,11 @@ export default {
       this.resetSetItem('nameId', val);
       console.log('changeboy', localStorage.getItem('nameId'));
     },
+    logout() {
+      localStorage.removeItem("nickName")
+      this.userName=""
+      this.isLogin=false;
+      swal('已登出')
+    }
   },
 };

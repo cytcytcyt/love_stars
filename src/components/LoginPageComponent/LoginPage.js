@@ -55,12 +55,16 @@ export default {
           password: this.loginForm.password,
         })
         .then((response) => {
-          if (response.data === "NO USERNAME") swal("用户名不存在","","warning");
-          else if (response.data === "PASSWORD ERR") swal("密码错误","","warning");
+          if (response.data.msg === "NO USERNAME") swal("用户名不存在","","warning");
+          else if (response.data.msg === "PASSWORD ERR") swal("密码错误","","warning");
           else {
               swal("欢迎");
+              console.log(response);
             //意义不明 其实存localStorage会更合适？ -lxt留
             that.$store.commit("setUserInfo", response.data);
+            //我用了自己的存localStorage方法，方便监听
+            console.log(response.data.nickname);
+            this.resetSetItem('nickName', response.data.nickname);
             that.$router.push("/");
           }
         })
@@ -87,6 +91,7 @@ export default {
                 } else {
                   // 调用mutations中的setUserInfo方法
                   that.$store.commit("setUserInfo", response.data);
+                  this.resetSetItem('nickName', response.data);
                   that.$router.push("/");
                   swal("注册成功");
                   this.$router.push("/ResignInfo");
