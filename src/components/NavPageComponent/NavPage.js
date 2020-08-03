@@ -29,10 +29,12 @@ export default {
   components: {},
   mounted() {
     window.addEventListener('setItem', () => {
-      this.userName = localStorage.getItem('nickName');
-      if(this.userName!=="") {
-        this.isLogin = true;
-        console.log(this.isLogin);
+      if(localStorage.getItem('nickName')) {
+        this.userName = localStorage.getItem('nickName');
+        if(this.userName!=="") {
+          this.isLogin = true;
+          console.log(this.isLogin);
+        }
       }
     });
     this.nameId = localStorage.getItem('nameId');
