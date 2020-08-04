@@ -8,7 +8,7 @@ export default {
   data() {
     return {
       nameId: 0,
-      userName: "",
+      userName: '',
       loginPage: '/loginPage',
       navList: [
         { path: '/starTelescope', img: 'el-icon-view', navItem: '星星望远镜' },
@@ -23,19 +23,21 @@ export default {
       bybg,
       zyltx,
       bytx,
-      isLogin: false
+      isLogin: false,
     };
   },
   components: {},
   mounted() {
-    this.userName = localStorage.getItem('nickName');
-    if(this.userName!=="") {
-      this.isLogin = true;
+    if (localStorage.getItem('nickName')) {
+      this.userName = localStorage.getItem('nickName');
+      if (this.userName !== '') {
+        this.isLogin = true;
+      }
     }
     window.addEventListener('setItem', () => {
-      if(localStorage.getItem('nickName')) {
+      if (localStorage.getItem('nickName')) {
         this.userName = localStorage.getItem('nickName');
-        if(this.userName!=="") {
+        if (this.userName !== '') {
           this.isLogin = true;
           console.log(this.isLogin);
         }
@@ -57,11 +59,11 @@ export default {
       console.log('changeboy', localStorage.getItem('nameId'));
     },
     logout() {
-      localStorage.removeItem("nickName")
-      this.userName=""
-      this.isLogin=false;
-      swal('已登出')
-      this.$router.push("/");
-    }
+      localStorage.removeItem('nickName');
+      this.userName = '';
+      this.isLogin = false;
+      swal('已登出');
+      this.$router.push('/');
+    },
   },
 };
