@@ -1,15 +1,13 @@
 <template>
   <div>
     <NavPage></NavPage>
-    <el-row>
-      <el-col :span="4">
-        <div class="left"></div>
+    <el-row type="flex">
+      <el-col :span="4" class="left">
       </el-col>
       <el-col :span="16">
         <router-view></router-view>
       </el-col>
-      <el-col :span="4">
-        <div class="right"></div>
+      <el-col :span="4" class="right">
       </el-col>
     </el-row>
   </div>
@@ -44,7 +42,6 @@ export default {
 <style lang="scss" scoped>
 .left,
 .right {
-  height: 1300px;
   background-color: beige;
   opacity: 0.5;
 }
