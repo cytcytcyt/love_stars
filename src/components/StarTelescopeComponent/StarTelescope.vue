@@ -72,8 +72,10 @@
               :key="index"
               :offset="index > 0 ? 1 : 0"
             >
-              <el-card>
-                <el-image :src="adr" fit="fill"></el-image>
+              <el-card>  
+                <a :href="adr" target="_blank" title="查看最大化图片">
+                  <el-image slot="reference" :src="adr" fit="fill" style="cursor:pointer"></el-image>
+                </a>
               </el-card>
             </el-col>
           </el-row>
