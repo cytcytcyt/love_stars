@@ -28,6 +28,10 @@ export default {
   },
   components: {},
   mounted() {
+    this.userName = localStorage.getItem('nickName');
+    if(this.userName!=="") {
+      this.isLogin = true;
+    }
     window.addEventListener('setItem', () => {
       if(localStorage.getItem('nickName')) {
         this.userName = localStorage.getItem('nickName');
