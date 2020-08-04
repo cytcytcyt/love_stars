@@ -10,6 +10,7 @@
       <el-col :span="4" class="right">
       </el-col>
     </el-row>
+    <FootPage></FootPage>
   </div>
 </template>
 
@@ -17,10 +18,12 @@
 import zyltx from "@/assets/zyltx.jpg";
 import bytx from "@/assets/bytx.jpg";
 import NavPage from "@/components/NavPageComponent/NavPage.vue";
+import FootPage from "@/components/FooterComponent/Foot.vue"
 export default {
   name: "App",
   components: {
-    NavPage
+    NavPage,
+    FootPage
   },
   data() {
     return {
