@@ -42,6 +42,7 @@ export default {
 <style lang="scss" scoped>
 .left,
 .right {
+  min-height: calc(100vh - 61px);
   background-color: beige;
   opacity: 0.5;
 }
