@@ -18,5 +18,9 @@ export default {
 <style lang="scss" scope>
 .foot-main {
     background-color: beige;
+    opacity: 0.5;
+    margin-top: -15px;
+    text-align: center;
+    font-size: 12px;
 }
 </style>
