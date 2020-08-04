@@ -54,7 +54,7 @@
 
 <script>
 import axios from "axios";
-import PublishPicture from "./PublishPictureComponent/PublishPicture";
+import PublishPicture from "../PublishPictureComponent/PublishPicture";
 
 export default {
   name: "ElecForLove",

@@ -57,6 +57,7 @@ export default {
       this.userName=""
       this.isLogin=false;
       swal('已登出')
+      this.$router.push("/");
     }
   },
 };
