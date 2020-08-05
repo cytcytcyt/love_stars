@@ -16,6 +16,81 @@ import qchyj2 from '@/assets/qchyj2.jpg';
 import zb1 from '@/assets/zb1.jpg';
 export default {
   name: 'StarTelescope',
+  watch: {
+    reverse(val) {
+      console.log('val', val);
+      this.activities = this.activities.reverse();
+    },
+  },
+  mounted() {
+    if (localStorage.getItem('nameId')) {
+      this.nameId = localStorage.getItem('nameId');
+    }
+    window.addEventListener('setItem', () => {
+      if (localStorage.getItem('nameId')) {
+        this.nameId = localStorage.getItem('nameId');
+        if (this.nameId === "1") {
+          this.activities = this.modelActivities1;
+        } else {
+          this.activities = this.modelActivities2;
+        }
+        console.log(this.nameId);
+        console.log(this.activities);
+      }
+    });
+    console.log('tete', this.nameId);
+    if (this.nameId === '1') {
+      this.activities = this.modelActivities1;
+    } else {
+      this.activities = this.modelActivities2;
+    }
+  },
+  methods: {
+    select() {
+      this.curPage = 1;
+      var moment = require('moment');
+      var monthSearchActivities = [];
+      var searchActivities = [];
+
+      if (this.listQuery.month === '') {
+        console.log(this.activities);
+        // this.activities=
+        if (this.listQuery.city === '') console.log(this.activities);
+        // this.activities=this.activities
+        else {
+          this.activities.forEach((item) => {
+            if (item.city === this.listQuery.city) {
+              searchActivities.push({ ...item });
+            }
+          });
+          this.activities = searchActivities;
+        }
+      } else {
+        this.activities.forEach((item) => {
+          if (
+            moment(item.time).isAfter(this.listQuery.month[0]) &&
+            moment(item.time).isBefore(this.listQuery.month[1])
+          ) {
+            monthSearchActivities.push({ ...item });
+          }
+        });
+        this.activities = monthSearchActivities;
+
+        if (this.listQuery.city === '') this.activities = monthSearchActivities;
+        else {
+          this.activities.forEach((item) => {
+            if (item.city === this.listQuery.city) {
+              searchActivities.push({ ...item });
+            }
+          });
+          this.activities = searchActivities;
+        }
+      }
+    },
+    handleCurrentChange(val) {
+      this.curPage = val;
+    },
+  },
   data() {
     return {
       zyltx,
@@ -280,80 +355,5 @@ export default {
       curPage: 1,
       pageSize: 3,
     };
-  },
-  watch: {
-    reverse(val) {
-      console.log('val', val);
-      this.activities = this.activities.reverse();
-    },
-  },
-  mounted() {
-    if (localStorage.getItem('nameId')) {
-      this.nameId = localStorage.getItem('nameId');
-    }
-    window.addEventListener('setItem', () => {
-      if (localStorage.getItem('nameId')) {
-        this.nameId = localStorage.getItem('nameId');
-        if (this.nameId === "1") {
-          this.activities = this.modelActivities1;
-        } else {
-          this.activities = this.modelActivities2;
-        }
-        console.log(this.nameId);
-        console.log(this.activities);
-      }
-    });
-    console.log('tete', this.nameId);
-    if (this.nameId === '1') {
-      this.activities = this.modelActivities1;
-    } else {
-      this.activities = this.modelActivities2;
-    }
-  },
-  methods: {
-    select() {
-      this.curPage = 1;
-      var moment = require('moment');
-      var monthSearchActivities = [];
-      var searchActivities = [];
-
-      if (this.listQuery.month === '') {
-        console.log(this.activities);
-        // this.activities=
-        if (this.listQuery.city === '') console.log(this.activities);
-        // this.activities=this.activities
-        else {
-          this.activities.forEach((item) => {
-            if (item.city === this.listQuery.city) {
-              searchActivities.push({ ...item });
-            }
-          });
-          this.activities = searchActivities;
-        }
-      } else {
-        this.activities.forEach((item) => {
-          if (
-            moment(item.time).isAfter(this.listQuery.month[0]) &&
-            moment(item.time).isBefore(this.listQuery.month[1])
-          ) {
-            monthSearchActivities.push({ ...item });
-          }
-        });
-        this.activities = monthSearchActivities;
-
-        if (this.listQuery.city === '') this.activities = monthSearchActivities;
-        else {
-          this.activities.forEach((item) => {
-            if (item.city === this.listQuery.city) {
-              searchActivities.push({ ...item });
-            }
-          });
-          this.activities = searchActivities;
-        }
-      }
-    },
-    handleCurrentChange(val) {
-      this.curPage = val;
-    },
-  },
+  }
 };
