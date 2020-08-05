@@ -103,6 +103,7 @@ export default {
                   // that.$router.push("/");
                   swal("注册成功");
                   // this.$router.push("/ResignInfo");
+                  this.resetSetItem('nickName', response.data.nickname);
                   that.$router.push("/");
                 }
               } else swal("网络错误，请稍后重试。","","warning");
