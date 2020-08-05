@@ -46,6 +46,12 @@ export default {
       },
     };
   },
+  mounted() {
+    if (localStorage.getItem('nickName')) {
+      swal("姐妹！你已经登录啦！","去看哥哥们吧~","warning");
+      this.$router.push("/");
+    }
+  },
   methods: {
     login() {
       const that = this;
@@ -81,6 +87,8 @@ export default {
             .post("http://localhost:8088/api/resignNewUser", {
               username: this.resignForm.emailAddress,
               password: this.resignForm.password,
+              //TODO: 这里是暂时先写死的，为了防止注册体验出现[object][object]，之后一定要记得去掉！！！
+              nickname: "zyl的同学"
             })
             .then((response) => {
               console.log("resign:", response);
@@ -92,9 +100,10 @@ export default {
                   // 调用mutations中的setUserInfo方法
                   that.$store.commit("setUserInfo", response.data);
                   this.resetSetItem('nickName', response.data);
-                  that.$router.push("/");
+                  // that.$router.push("/");
                   swal("注册成功");
-                  this.$router.push("/ResignInfo");
+                  // this.$router.push("/ResignInfo");
+                  that.$router.push("/");
                 }
               } else swal("网络错误，请稍后重试。","","warning");
               return false;
