@@ -24,6 +24,8 @@ export default {
       zyltx,
       bytx,
       isLogin: false,
+      isShow: true,
+      fullWidth: 0
     };
   },
   components: {},
@@ -47,6 +49,17 @@ export default {
     console.log('router', this.$route.path);
     if (this.$route.path === '') this.firstIn = true;
   },
+  created(){
+    window.addEventListener('resize', ()=> {
+      console.log("in");
+      this.fullWidth = document.documentElement.clientWidth;
+      if (this.fullWidth < 750) {
+        this.isShow = false;
+      } else {
+        this.isShow = true;
+      }
+    })
+  },
   methods: {
     // 导航栏选择事件
     handleSelect(key, keyPath) {
@@ -64,6 +77,6 @@ export default {
       this.isLogin = false;
       swal('已登出');
       this.$router.push('/');
-    },
+    }
   },
 };

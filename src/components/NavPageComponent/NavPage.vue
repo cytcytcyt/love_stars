@@ -10,10 +10,17 @@
       text-color="#fff"
       active-text-color="#00B2FF"
     >
-      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.path">
+      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.path" v-show="isShow">
         <i :class="item.img"></i>
         {{ item.navItem }}
       </el-menu-item>
+      <el-submenu index="菜单" v-show="!isShow">
+        <template slot="title">菜单</template>
+        <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.path">
+          <i :class="item.img"></i>
+          {{ item.navItem }}
+        </el-menu-item>
+      </el-submenu>
       <div class="right-corner">
         <div @click="changeBoy(1)">
           <el-avatar class="avatar" :src="zyltx"></el-avatar>
@@ -23,13 +30,13 @@
         </div>
       </div>
       <div class="right-corner">
-          <el-menu-item :index="loginPage" v-show="!isLogin">登录</el-menu-item>
+        <el-menu-item :index="loginPage" v-show="!isLogin">登录</el-menu-item>
       </div>
       <div class="right-corner">
-          <el-menu-item @click="logout()" v-show="isLogin">登出</el-menu-item>
-      </div>      
+        <el-menu-item @click="logout()" v-show="isLogin">登出</el-menu-item>
+      </div>
       <div class="right-corner" v-show="isLogin">
-          <el-menu-item>{{userName}}</el-menu-item>
+        <el-menu-item>{{userName}}</el-menu-item>
       </div>
     </el-menu>
   </div>
