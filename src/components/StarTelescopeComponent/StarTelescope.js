@@ -14,7 +14,6 @@ import pljkj from '@/assets/pljkj.jpg';
 import qchyj from '@/assets/qchyj.jpg';
 import qchyj2 from '@/assets/qchyj2.jpg';
 import zb1 from '@/assets/zb1.jpg';
-
 export default {
   name: 'StarTelescope',
   data() {
@@ -289,19 +288,29 @@ export default {
     },
   },
   mounted() {
-    this.nameId = localStorage.getItem('nameId');
+    if (localStorage.getItem('nameId')) {
+      this.nameId = localStorage.getItem('nameId');
+    }
+    window.addEventListener('setItem', () => {
+      if (localStorage.getItem('nameId')) {
+        this.nameId = localStorage.getItem('nameId');
+        if (this.nameId === "1") {
+          this.activities = this.modelActivities1;
+        } else {
+          this.activities = this.modelActivities2;
+        }
+        console.log(this.nameId);
+        console.log(this.activities);
+      }
+    });
     console.log('tete', this.nameId);
     if (this.nameId === '1') {
       this.activities = this.modelActivities1;
-      console.log(1, this.activities);
-    } else this.activities = this.modelActivities2;
+    } else {
+      this.activities = this.modelActivities2;
+    }
   },
   methods: {
-    changeBoy(val) {
-      console.log('change', val);
-      if (val === 1) this.activities = this.modelActivities1;
-      else this.activities = this.modelActivities2;
-    },
     select() {
       this.curPage = 1;
       var moment = require('moment');

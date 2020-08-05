@@ -1,13 +1,5 @@
 <template>
   <div class="star-tele">
-    <div class="star-right-corner">
-      <div @click="changeBoy(1)">
-        <el-avatar class="avatar" :src="zyltx"></el-avatar>
-      </div>
-      <div @click="changeBoy(2)">
-        <el-avatar class="avatar" :src="bytx"></el-avatar>
-      </div>
-    </div>
     <el-row class="top-bar">
       <el-col :span="9">
         <div class="month-changer">
