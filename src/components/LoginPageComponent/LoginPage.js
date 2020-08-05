@@ -48,7 +48,7 @@ export default {
   },
   mounted() {
     if (localStorage.getItem('nickName')) {
-      swal("姐妹！你已经登录啦！","去看哥哥们吧~","warning");
+      swal("姐妹！你已经登录啦！","快去看哥哥们吧~","warning");
       this.$router.push("/");
     }
   },
